@@ -53,7 +53,7 @@ public class TaskItemList {
 	 * @param tasks the array of tasks to be added
 	 */
 	public void addXMLTasks(List<Task> tasks) {
-		
+		//To be implemented
 	}
 	
 	/**
@@ -97,7 +97,7 @@ public class TaskItemList {
 	 * @param command the command for the task with the given id
 	 */
 	public void executeCommand(int taskId, Command command) {
-		
+		//To be implemented
 	}
 	
 	/**
@@ -105,6 +105,6 @@ public class TaskItemList {
 	 * @param taskId the id of the task item to be deleted
 	 */
 	public void deleteTaskItemById(int taskId) {
-		
+		//To be implemented
 	}
 }

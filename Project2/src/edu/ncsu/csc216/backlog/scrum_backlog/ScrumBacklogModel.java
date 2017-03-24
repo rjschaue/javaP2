@@ -119,7 +119,7 @@ public class ScrumBacklogModel {
 	 * @param command the command for the task at the given id
 	 */
 	public void executeCommand(int taskId, Command command) {
-		
+		//To be implemented
 	}
 	
 	/**
@@ -127,7 +127,7 @@ public class ScrumBacklogModel {
 	 * @param taskId the task id of the item to be deleted
 	 */
 	public void deleteTaskItemById(int taskId) {
-		
+		//To be implemented
 	}
 	
 	/**
