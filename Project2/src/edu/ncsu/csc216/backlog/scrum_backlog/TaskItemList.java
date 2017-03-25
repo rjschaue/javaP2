@@ -18,7 +18,7 @@ import edu.ncsu.csc216.task.xml.Task;
 public class TaskItemList {
 	/** The array list of task items */
 	public ArrayList<TaskItem> tasks;
-	/** The inital counter value for the task item list */
+	/** The initial counter value for the task item list */
 	private static final int INITIAL_COUNTER_VALUE = 1;
 
 	/**
@@ -45,7 +45,9 @@ public class TaskItemList {
 	 * @return the id of the added task item
 	 */
 	public int addTaskItem(String title, Type type, String creator, String note) {
-		return 0;
+		TaskItem taskItem = new TaskItem(title, type, creator, note);
+		tasks.add(taskItem);
+		return taskItem.getTaskItemId();
 	}
 	
 	/**
@@ -53,7 +55,10 @@ public class TaskItemList {
 	 * @param tasks the array of tasks to be added
 	 */
 	public void addXMLTasks(List<Task> tasks) {
-		//To be implemented
+		for (Task task: tasks) {
+			TaskItem taskItem = new TaskItem(task);
+			this.tasks.add(taskItem);
+		}
 	}
 	
 	/**
@@ -61,7 +66,7 @@ public class TaskItemList {
 	 * @return a list of task items
 	 */
 	public List<TaskItem> getTaskItems() {
-		return null;
+		return tasks;
 	}
 	
 	/**
@@ -70,7 +75,13 @@ public class TaskItemList {
 	 * @return a list of task items by owner
 	 */
 	public List<TaskItem> getTaskItemsByOwner(String owner) {
-		return null;
+		ArrayList<TaskItem> taskItemList = new ArrayList<TaskItem>();
+		for (TaskItem taskItem: tasks) {
+			if (taskItem.getOwner().equals(owner)) {
+				taskItemList.add(taskItem);
+			}
+		}
+		return taskItemList;
 	}
 	
 	/**
@@ -79,7 +90,13 @@ public class TaskItemList {
 	 * @return a list of task items by creator
 	 */
 	public List<TaskItem> getTasksByCreator(String creator) {
-		return null;
+		ArrayList<TaskItem> taskItemList = new ArrayList<TaskItem>();
+		for (TaskItem taskItem: tasks) {
+			if (taskItem.getCreator().equals(creator)) {
+				taskItemList.add(taskItem);
+			}
+		}
+		return taskItemList;
 	}
 	
 	/**
@@ -88,6 +105,11 @@ public class TaskItemList {
 	 * @return a task item by it's id
 	 */
 	public TaskItem getTaskItemById(int taskId) {
+		for (TaskItem taskItem: tasks) {
+			if (taskItem.getTaskItemId() == taskId) {
+				return taskItem;
+			}
+		}
 		return null;
 	}
 	
@@ -97,7 +119,10 @@ public class TaskItemList {
 	 * @param command the command for the task with the given id
 	 */
 	public void executeCommand(int taskId, Command command) {
-		//To be implemented
+		TaskItem taskItem = getTaskItemById(taskId);
+		if (taskItem != null) {
+			taskItem.update(command);
+		}		
 	}
 	
 	/**
@@ -105,6 +130,12 @@ public class TaskItemList {
 	 * @param taskId the id of the task item to be deleted
 	 */
 	public void deleteTaskItemById(int taskId) {
-		//To be implemented
+		for (int i = 0; i < tasks.size(); i++) {
+			TaskItem taskItem = tasks.get(i);
+			if (taskItem.getTaskItemId() == taskId) {
+				tasks.remove(i);
+				break;
+			}
+		}
 	}
 }
