@@ -20,7 +20,7 @@ public class Note {
 		if (noteAuthor == null || noteAuthor.isEmpty()) {
 			throw new IllegalArgumentException();
 		}
-		if (noteText == null || noteAuthor.isEmpty()) {
+		if (noteText == null || noteText.isEmpty()) {
 			throw new IllegalArgumentException();
 		}
 		this.noteAuthor = noteAuthor;

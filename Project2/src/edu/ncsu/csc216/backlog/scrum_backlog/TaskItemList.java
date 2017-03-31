@@ -75,6 +75,9 @@ public class TaskItemList {
 	 * @return a list of task items by owner
 	 */
 	public List<TaskItem> getTaskItemsByOwner(String owner) {
+		if (owner == null) {
+			throw new IllegalArgumentException();
+		}
 		ArrayList<TaskItem> taskItemList = new ArrayList<TaskItem>();
 		for (TaskItem taskItem: tasks) {
 			if (taskItem.getOwner() != null && taskItem.getOwner().equals(owner)) {
@@ -90,6 +93,9 @@ public class TaskItemList {
 	 * @return a list of task items by creator
 	 */
 	public List<TaskItem> getTasksByCreator(String creator) {
+		if (creator == null) {
+			throw new IllegalArgumentException();
+		}
 		ArrayList<TaskItem> taskItemList = new ArrayList<TaskItem>();
 		for (TaskItem taskItem: tasks) {
 			if (taskItem.getCreator() != null && taskItem.getCreator().equals(creator)) {
