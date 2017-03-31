@@ -134,6 +134,10 @@ public class TaskItemTest {
 		assertEquals(taskItem.getTitle(), "TaskTitle");
 		assertEquals(taskItem.getCreator(), "TaskCreator");
 		assertNull(taskItem.getOwner());
+		
+		//Test Type
+		Type.valueOf("BUG");
+		Type.values();
 	}
 
 	/**
