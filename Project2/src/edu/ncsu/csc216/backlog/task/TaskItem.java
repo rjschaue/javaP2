@@ -510,6 +510,7 @@ public class TaskItem {
 			} else if (c.getCommand().equals(CommandValue.BACKLOG)) {
 				Note note = new Note(c.getNoteAuthor(), c.getNoteText());
 				notes.add(note);
+				owner = null;
 				setState(BACKLOG_NAME);
 			} else {
 				throw new UnsupportedOperationException();
