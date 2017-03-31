@@ -56,6 +56,8 @@ public class TaskItemListTest {
 		xmlTasks.add(task);
 		
 		taskList.addXMLTasks(xmlTasks);
+		TaskItem taskItem = taskList.getTaskItemById(1);
+		assertEquals(taskItem.getTitle(), "TaskTitle");
 	}
 	
 	/**

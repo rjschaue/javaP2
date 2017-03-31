@@ -351,7 +351,7 @@ public class TaskItemTest {
 		try {
 			TaskItem.setCounter(0);
 		} catch (IllegalArgumentException e) {
-			
+			assertEquals(taskItem.getTitle(), "Title");
 		}
 		String[][] notesArray = new String[2][2];
 		notesArray[0][0] = "Creator";
