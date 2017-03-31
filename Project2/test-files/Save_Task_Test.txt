@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><task_list><tasks><id>1</id><state>Backlog</state><title>Title1</title><type>B</type><creator>Creator1</creator><verified>false</verified><note_list><note><note_text>Note1</note_text><note_author>Creator1</note_author></note></note_list></tasks></task_list>
