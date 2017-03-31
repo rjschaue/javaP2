@@ -65,6 +65,17 @@ public class CommandTest {
 			assertEquals(c.getNoteAuthor(), "Author");
 			assertEquals(c.getNoteText(), "Text");
 		}
+		//Testing enums
+		c = new Command(CommandValue.CLAIM, "Author", "Note");
+		assertEquals(c.getCommand(), CommandValue.CLAIM);
+		c = new Command(CommandValue.COMPLETE, "Author", "Note");
+		assertEquals(c.getCommand(), CommandValue.COMPLETE);
+		c = new Command(CommandValue.PROCESS, "Author", "Note");
+		assertEquals(c.getCommand(), CommandValue.PROCESS);
+		c = new Command(CommandValue.REJECT, "Author", "Note");
+		assertEquals(c.getCommand(), CommandValue.REJECT);
+		c = new Command(CommandValue.VERIFY, "Author", "Note");
+		assertEquals(c.getCommand(), CommandValue.VERIFY);
 	}
 
 }
