@@ -103,6 +103,7 @@ public class TaskItemListTest {
 		
 		Command c = new Command(CommandValue.CLAIM, "Author", "Note");
 		taskList.executeCommand(1, c);
+		assertEquals(taskList.getTaskItemById(1).getStateName(), "Owned");
 		taskList.executeCommand(10, c);
 	}
 	
